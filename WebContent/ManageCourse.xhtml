@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Course</title>
+</h:head>
+<f:metadata>
+	<f:event type="preRenderView"
+		listener="#{courseDBController.loadCourses()}"/>
+</f:metadata>
+<h:body>
+	<h3>Course Details</h3>
+	<table style="width:50%">
+		<tr>
+			<th>Course ID</th>
+			<th>Name</th>
+			<th>Duration</th>
+		</tr>
+		<tr>
+			<th>#{courseDBController.cr[0].CID}</th>
+			<th>#{courseDBController.cr[0].name}</th>
+			<th>#{courseDBController.cr[0].duration} </th>
+		</tr>
+	</table>
+	 
+</h:body>
+</html>
