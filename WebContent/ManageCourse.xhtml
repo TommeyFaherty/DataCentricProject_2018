@@ -12,18 +12,34 @@
 </f:metadata>
 <h:body>
 	<h3>Course Details</h3>
-	<table style="width:50%">
-		<tr>
-			<th>Course ID</th>
-			<th>Name</th>
-			<th>Duration</th>
-		</tr>
-		<tr>
-			<th>#{courseDBController.cr[0].CID}</th>
-			<th>#{courseDBController.cr[0].name}</th>
-			<th>#{courseDBController.cr[0].duration} </th>
-		</tr>
-	</table>
-	 
+	
+	<h:form>
+		<h:commandButton action="AddCourse" value="Add Course"></h:commandButton>
+	</h:form>
+	
+	<h:dataTable value="#{courseDBController.cr}"
+	var ="s">
+		<h:column>
+			<f:facet name="header">Course ID</f:facet>
+			#{s.CID}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Name</f:facet>
+			#{s.name}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Duration</f:facet>
+			#{s.duration}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Action</f:facet>
+			<h:outputLink value="CourseStudents.xhtml">Show Students</h:outputLink>
+			<h:outputLink actionListener="#{CourseDB.deleteCourse(s.CID)}">Delete</h:outputLink>
+		</h:column>
+	</h:dataTable>
+	<h:outputLink value="index.xhtml">Home</h:outputLink>
 </h:body>
 </html>

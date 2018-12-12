@@ -22,4 +22,8 @@ public class CourseDBController {
 	public ArrayList<CourseDB> getCr(){
 		return cr;
 	}
+	
+	public void addCourse(String cid,String cName, int duration) throws Exception{
+		dao.addCourse(cid, cName, duration);
+	}
 }

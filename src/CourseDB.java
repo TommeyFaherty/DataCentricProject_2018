@@ -5,6 +5,7 @@ public class CourseDB {
 	private String cID;
 	private String name;
 	private int duration;
+	private DAO dao;
 
 	public CourseDB(String cid, String name, int duration) {
 		super();
@@ -13,8 +14,9 @@ public class CourseDB {
 		this.duration = duration;
 	}
 	
-	public CourseDB() {
+	public CourseDB() throws Exception {
 		super();
+		dao = new DAO();
 	}
 	
 	public String getCID() {
@@ -39,5 +41,14 @@ public class CourseDB {
 	
 	public void setDuration(int duration) {
 		this.duration = duration;
+	}
+	
+	public void addCourse() throws Exception {
+		dao.addCourse(this.cID, this.name, this.duration);
+	}
+	
+	public void deleteCourse(String CID) throws Exception{
+		this.cID = CID;
+		dao.deleteCourse(this.cID);
 	}
 }

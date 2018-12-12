@@ -62,8 +62,39 @@ public class DAO {
 		}
 		
 		return courseDets;
-		
-		
 	}
 	
+	public void addCourse(String cid, String cName, int duration) throws Exception{
+		System.out.println("In add Course");
+		Connection conn = mysqlDS.getConnection();
+		Statement myStmt = conn.createStatement();
+		
+		String query = "insert into course values("+
+		"'"+cid+"',"+
+		"'"+cName+"',"+
+		"'"+duration+"')";
+		
+		System.out.println("adding "+cid+" "+cName+" "+duration);
+		
+		myStmt.executeUpdate(query);
+	}
+	
+	public ArrayList<CourseDB> loadStudCourses() throws Exception{
+		
+		ArrayList<CourseDB> loadStud= new ArrayList<>();
+		
+		CourseDB c = new CourseDB();
+		return loadStud;
+	}
+	
+	public void deleteCourse(String cid) throws Exception{
+		System.out.println("In delete Course");
+		Connection conn = mysqlDS.getConnection();
+		Statement myStmt = conn.createStatement();
+		
+		String query ="Delete from course where cID like '"+
+		cid+"'";
+		
+		myStmt.executeUpdate(query);
+	}
 }
