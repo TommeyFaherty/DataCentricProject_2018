@@ -23,7 +23,4 @@ public class CourseDBController {
 		return cr;
 	}
 	
-	public void addCourse(String cid,String cName, int duration) throws Exception{
-		dao.addCourse(cid, cName, duration);
-	}
 }

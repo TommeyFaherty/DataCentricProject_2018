@@ -17,6 +17,7 @@
 		<h:commandButton action="AddCourse" value="Add Course"></h:commandButton>
 	</h:form>
 	
+	<h:form>
 	<h:dataTable value="#{courseDBController.cr}"
 	var ="s">
 		<h:column>
@@ -37,9 +38,10 @@
 		<h:column>
 		<f:facet name="header">Action</f:facet>
 			<h:outputLink value="CourseStudents.xhtml">Show Students</h:outputLink>
-			<h:outputLink actionListener="#{CourseDB.deleteCourse(s.CID)}">Delete</h:outputLink>
+			<h:commandButton value="Delete" action="#{courseDB.deleteCourse(s.CID)}" />
 		</h:column>
 	</h:dataTable>
+	</h:form>
 	<h:outputLink value="index.xhtml">Home</h:outputLink>
 </h:body>
 </html>

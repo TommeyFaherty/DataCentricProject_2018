@@ -79,6 +79,22 @@ public class DAO {
 		myStmt.executeUpdate(query);
 	}
 	
+	public void addStudent(String sid, String cid, String name, String address) throws Exception{
+		System.out.println("In add Course");
+		Connection conn = mysqlDS.getConnection();
+		Statement myStmt = conn.createStatement();
+		
+		String query = "insert into student values("+
+		"'"+sid+"',"+
+		"'"+cid+"',"+
+		"'"+name+"',"+
+		"'"+address+"')";
+		
+		System.out.println("adding "+cid+" "+name+" "+address);
+		
+		myStmt.executeUpdate(query);
+	}
+	
 	public ArrayList<CourseDB> loadStudCourses() throws Exception{
 		
 		ArrayList<CourseDB> loadStud= new ArrayList<>();
@@ -92,8 +108,7 @@ public class DAO {
 		Connection conn = mysqlDS.getConnection();
 		Statement myStmt = conn.createStatement();
 		
-		String query ="Delete from course where cID like '"+
-		cid+"'";
+		String query ="Delete from course where cID like '"+cid+"'";
 		
 		myStmt.executeUpdate(query);
 	}

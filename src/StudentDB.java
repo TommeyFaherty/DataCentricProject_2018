@@ -5,6 +5,7 @@ public class StudentDB {
 	private String sID;
 	private String cID;
 	private String address;
+	private DAO dao;
 	
 	public StudentDB(String sid,String cID,String name,String address) {
 		super();
@@ -14,8 +15,9 @@ public class StudentDB {
 		this.address = address;
 	}
 	
-	public StudentDB() {
+	public StudentDB() throws Exception {
 		super();
+		dao = new DAO();
 	}
 	
 	public String getName() {
@@ -48,5 +50,9 @@ public class StudentDB {
 	
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public void addStudent() throws Exception {
+		dao.addStudent(this.sID, this.cID, this.name, this.address);
 	}
 }

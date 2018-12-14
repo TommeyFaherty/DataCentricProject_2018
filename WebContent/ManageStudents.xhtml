@@ -12,20 +12,41 @@
 </f:metadata>
 <h:body>
 	<h3>Student Details</h3>
-	<table style="width:50%">
-		<tr>
-			<th>Student ID</th>
-			<th>Course ID</th>
-			<th>Name</th>
-			<th>Address</th>
-		</tr>
-		<tr>
-			<th>#{studentDBController.st[0].SID}</th>
-			<th>#{studentDBController.st[0].CID}</th>
-			<th>#{studentDBController.st[0].name}</th>
-			<th>#{studentDBController.st[0].address} </th>
-		</tr>
-	</table>
-	 
+	
+	<h:form>
+		<h:commandButton action="AddStudent" value="Add Student"></h:commandButton>
+	</h:form>
+	
+	<h:form>
+	<h:dataTable value="#{studentDBController.st}"
+	var ="s">
+		<h:column>
+			<f:facet name="header">Student ID</f:facet>
+			#{s.SID}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Course ID</f:facet>
+			#{s.CID}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">name</f:facet>
+			#{s.name}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">address</f:facet>
+			#{s.address}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Action</f:facet>
+			<h:outputLink value="CourseStudents.xhtml">All Details</h:outputLink>
+			<h:commandButton value="Delete" action="#{studentDB.deleteCourse(s.SID)}" />
+		</h:column>
+	</h:dataTable>
+	</h:form>
+
 </h:body>
 </html>

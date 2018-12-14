@@ -47,8 +47,9 @@ public class CourseDB {
 		dao.addCourse(this.cID, this.name, this.duration);
 	}
 	
-	public void deleteCourse(String CID) throws Exception{
-		this.cID = CID;
-		dao.deleteCourse(this.cID);
+	public void deleteCourse(String cid) throws Exception{
+		System.out.println("Here");
+		//this.cID = cid;
+		dao.deleteCourse(cid);
 	}
 }
