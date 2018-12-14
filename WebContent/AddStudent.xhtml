@@ -14,25 +14,26 @@
   	<table>
   		<tr>
   			<td>Student ID:</td>
-  			<td><h:inputText value="#{studentDB.SID}" p:placeholder="sid" required="true" requiredMessage="Student Id Required"/></td>
+  			<td><h:inputText value="#{studentDB.SID}" p:placeholder="sid" id="sid" required="true" requiredMessage="Student Id Required"/></td>
   		</tr>
   		<tr>
   			<td>Course ID:</td>
-  			<td><h:inputText value="#{studentDB.CID}" p:placeholder="cid" required="true" requiredMessage="Course Id Required"/></td>
+  			<td><h:inputText value="#{studentDB.CID}" p:placeholder="cid" id="cid" required="true" requiredMessage="Course Id Required"/></td>
   		</tr>
   		<tr>
   			<td>Name:</td>
-  			<td><h:inputText value="#{studentDB.name}" p:placeholder="name" required="true" requiredMessage="Name Required"/></td>
+  			<td><h:inputText value="#{studentDB.name}" p:placeholder="name" id="Name" required="true" requiredMessage="Name Required"/></td>
   		</tr>
   		<tr>
   			<td>Address:</td>
-  			<td><h:inputText value="#{studentDB.address}" p:placeholder="Address" required="true" requiredMessage="Address Required"/></td>
+  			<td><h:inputText value="#{studentDB.address}" p:placeholder="Address" id="Address" required="true" requiredMessage="Address Required"/></td>
 		</tr>
 	</table>
 	<h:commandButton value="Add" action="#{studentDB.addStudent()}"/>  
 	</h:form>
 	<h:outputLink value="index.xhtml">Home</h:outputLink>
 	<h:outputLink value="ManageStudents.xhtml">Students</h:outputLink>
+	<h:messages style="color:red;margin:8px;"/>
 	
   </h:body>
 </html>

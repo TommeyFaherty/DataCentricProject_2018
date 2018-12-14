@@ -43,10 +43,10 @@
 		<h:column>
 		<f:facet name="header">Action</f:facet>
 			<h:outputLink value="CourseStudents.xhtml">All Details</h:outputLink>
-			<h:commandButton value="Delete" action="#{studentDB.deleteCourse(s.SID)}" />
+			<h:commandLink value="Delete" action="#{studentDB.deleteCourse(s.SID)}" />
 		</h:column>
 	</h:dataTable>
 	</h:form>
-
+	<h:outputLink value="index.xhtml">Home</h:outputLink>
 </h:body>
 </html>

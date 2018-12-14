@@ -14,21 +14,23 @@
   	<table>
   		<tr>
   			<td>Course ID:</td>
-  			<td><h:inputText value="#{courseDB.CID}" p:placeholder="cid" required="true" requiredMessage="Course Id Required"/></td>
+  			<td><h:inputText value="#{courseDB.CID}" p:placeholder="cid" id="cid" required="true" requiredMessage="Course Id Required"/></td>
   		</tr>
   		<tr>
   			<td>Name:</td>
-  			<td><h:inputText value="#{courseDB.name}" p:placeholder="cName" required="true" requiredMessage="Name Required"/></td>
+  			<td><h:inputText value="#{courseDB.name}" p:placeholder="cName" id="Name" required="true" requiredMessage="Name Required"/></td>
   		</tr>
   		<tr>
   			<td>Duration:</td>
-  			<td><h:inputText value="#{courseDB.duration}" p:placeholder="Duration" required="true" requiredMessage="Duration Required"/></td>
+  			<td><h:inputText value="#{courseDB.duration}" p:placeholder="Duration" id="Duration" required="true" requiredMessage="Duration Required"/></td>
 		</tr>
 	</table>
+	
 	<h:commandButton value="Add" action="#{courseDB.addCourse()}"/>  
+	
+	<h:messages style="color:red;margin:8px;"/>
 	</h:form>
 	<h:outputLink value="index.xhtml">Home</h:outputLink>
 	<h:outputLink value="ManageCourse.xhtml">Course</h:outputLink>
-	
   </h:body>
 </html>
